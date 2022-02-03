@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Setupbrowser {
 	
 	public static WebDriver driver;
-	String ApppURL="https://www.google.com";
+	String AppURL="https://www.google.com";
 	
 			
 		@BeforeSuite
