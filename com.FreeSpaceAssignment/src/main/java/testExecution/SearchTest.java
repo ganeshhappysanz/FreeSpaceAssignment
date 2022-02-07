@@ -2,7 +2,6 @@ package testExecution;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Iterator;
 
@@ -23,7 +22,7 @@ public class SearchTest extends Setupbrowser{
 	
 	
 	@Test
-	public void SearchApp() throws InterruptedException, IOException{
+	public static void SearchApp() throws InterruptedException, IOException{
 		PageFactory.initElements(driver, pageElements.PageObjects.class);
 		
 		FileInputStream fis = new FileInputStream((System.getProperty("user.dir")+"\\TestData\\TestData.xlsx"));
