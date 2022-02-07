@@ -1,41 +1,64 @@
 package testExecution;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import broswerSetup.Setupbrowser;
-import jxl.Workbook;
-import jxl.read.biff.BiffException;
-import jxl.write.WritableSheet;
-import jxl.write.WritableWorkbook;
-import jxl.write.WriteException;
-import jxl.write.biff.RowsExceededException;
 import pageElements.PageObjects;
 
 public class SearchTest extends Setupbrowser{
 	
 	
 	@Test
-	public void SearchApp() throws BiffException, IOException, InterruptedException, RowsExceededException, WriteException {
+	public void SearchApp() throws InterruptedException, IOException{
 		PageFactory.initElements(driver, pageElements.PageObjects.class);
 		
-		File file=new File(System.getProperty("user.dir")+"//TestData//TestData.xls");
-		Workbook wb=Workbook.getWorkbook(file);
+		FileInputStream fis = new FileInputStream((System.getProperty("user.dir")+"\\TestData\\TestData.xlsx"));
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		Iterator<Row> rowIterator = sheet.iterator(); // sh.rowIterator(); -- also works well
+		while(rowIterator.hasNext()){               
+		    Row row = rowIterator.next();               
+		    Iterator<Cell> cellIterator = row.iterator();
+		    String inputData=cellIterator.next().toString();
+		    for (String exceldata:inputData.split("\\r\\n")) {
+		    PageObjects.searchTextbox.sendKeys(exceldata.split("\n"));
+		    Actions PressEnterKey = new Actions(driver);
+			PressEnterKey.sendKeys(Keys.ENTER).build().perform();
+			Thread.sleep(3000);
+			Setupbrowser.pageScrollDown();
+			Thread.sleep(4000);
+			}
+		    driver.navigate().back();
+	
 		
-		PageObjects.searchTextbox.sendKeys(wb.getSheet(0).getCell(0, 1).getContents());
-		Actions PressEnterKey = new Actions(driver);
-		PressEnterKey.sendKeys(Keys.ENTER).build().perform();
-		Thread.sleep(3000);
-		Setupbrowser.pageScrollDown();
-		Thread.sleep(3000);
-		String ZomatoRating=PageObjects.zomatoPlaystore.getText();
-		System.out.println(ZomatoRating);
 		
-		WritableWorkbook write = Workbook.createWorkbook(file);
-		WritableSheet sht = write.getSheet(0);
+		
+		
+		/*
+		 * System.out.println(sheet.getRow(1).getCell(0));
+		 * System.out.println(sheet.getRow(2).getCell(0));
+		 */
+		
+		    
+		    
+		}
+		
+		
+		
 		
 		
 		
