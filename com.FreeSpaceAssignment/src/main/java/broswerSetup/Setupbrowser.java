@@ -23,7 +23,7 @@ public class Setupbrowser {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
-			driver.get(ApppURL);
+			driver.get(AppURL);
 			
 		}
 		
