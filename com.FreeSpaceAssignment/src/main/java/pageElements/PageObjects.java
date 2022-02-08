@@ -26,5 +26,20 @@ public class PageObjects {
 		return zomatoPlaystore.getText();
 	}
 	
+	public static String swiggyPlaystore() {
+		
+		return swiggyPlaystore.getText();
+	}
+	
+	public static String netflixPlaystore() {
+		return netflixPlaystore.getText();
+		
+	}
+	
+	public static String zee5Playstore() {
+		return zee5Playstore.getText();
+		
+	}
+	
 
 }

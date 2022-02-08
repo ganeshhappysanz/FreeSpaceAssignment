@@ -12,6 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -29,6 +30,9 @@ public class SearchTest extends Setupbrowser{
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 		XSSFSheet sheet = workbook.getSheetAt(0);
 		Iterator<Row> rowIterator = sheet.iterator(); // sh.rowIterator(); -- also works well
+		if (rowIterator.hasNext())
+			rowIterator.next();
+		
 		while(rowIterator.hasNext()){               
 		    Row row = rowIterator.next();               
 		    Iterator<Cell> cellIterator = row.iterator();
@@ -43,10 +47,8 @@ public class SearchTest extends Setupbrowser{
 			Setupbrowser.pageScrollDown();
 			Thread.sleep(4000);
 			
-			//System.out.println(PageObjects.zomatoPlaystore());
-			
-			}
-		    PageObjects.searchTextbox.clear();
+		    }
+		   PageObjects.searchTextbox.clear();
 		    
 
 	
@@ -64,12 +66,8 @@ public class SearchTest extends Setupbrowser{
 		}
 		
 		
+		}
 		
 		
-		
-		
-		
-		
-	}
 
 }
