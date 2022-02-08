@@ -33,15 +33,22 @@ public class SearchTest extends Setupbrowser{
 		    Row row = rowIterator.next();               
 		    Iterator<Cell> cellIterator = row.iterator();
 		    String inputData=cellIterator.next().toString();
+		    
 		    for (String exceldata:inputData.split("\\r\\n")) {
+		    
 		    PageObjects.searchTextbox.sendKeys(exceldata.split("\n"));
 		    Actions PressEnterKey = new Actions(driver);
 			PressEnterKey.sendKeys(Keys.ENTER).build().perform();
 			Thread.sleep(3000);
 			Setupbrowser.pageScrollDown();
 			Thread.sleep(4000);
+			
+			//System.out.println(PageObjects.zomatoPlaystore());
+			
 			}
-		    driver.navigate().back();
+		    PageObjects.searchTextbox.clear();
+		    
+
 	
 		
 		

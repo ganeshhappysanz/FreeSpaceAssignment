@@ -8,18 +8,23 @@ public class PageObjects {
 	@FindBy(xpath="//input[@name='q'] | //input[@title=('Search')]")
 	public static WebElement searchTextbox;
 	
-	@FindBy(xpath="//*[contains(text(),'Rating')  and  //*[contains(text(),'Zomato: Food Delivery & Dining ? Apps on Google Play')]]")
+	@FindBy(xpath="//*[contains(text(),'Rating')  and  //*[contains(text(),'Zomato: Food Delivery & Dining â€“ Apps on Google Play')]]")
 	public static WebElement zomatoPlaystore;
 	
-	@FindBy(xpath="//*[contains(text(),'Rating') and //*[contains(text(),'Swiggy : Food Delivery & More – Apps on Google Play')]]")
+	@FindBy(xpath="//*[contains(text(),'Rating') and //*[contains(text(),'Swiggy : Food Delivery & More â€“ Apps on Google Play')]]")
 	public static WebElement swiggyPlaystore;
 	
-	@FindBy(xpath="//*[contains(text(),'Rating') and //*[contains(text(),'Netflix – Apps on Google Play')]]")
+	@FindBy(xpath="//*[contains(text(),'Rating') and //*[contains(text(),'Netflix â€“ Apps on Google Play')]]")
 	public static WebElement netflixPlaystore;
 	
 	@FindBy(xpath="//*[contains(text(),'Rating') and //*[contains(text(),'ZEE5: Movies, TV Shows, Web Series, News - Google Play')]]")
 	public static WebElement zee5Playstore;
 	
+	
+	public static String zomatoPlaystore() {
+		
+		return zomatoPlaystore.getText();
+	}
 	
 
 }

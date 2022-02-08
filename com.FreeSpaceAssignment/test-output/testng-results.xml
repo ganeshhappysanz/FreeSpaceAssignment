@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-07T22:02:35 IST" name="Default suite" finished-at="2022-02-07T22:03:19 IST" duration-ms="43280">
+  <suite started-at="2022-02-08T10:46:51 IST" name="Default suite" finished-at="2022-02-08T10:47:22 IST" duration-ms="30820">
     <groups>
     </groups>
-    <test started-at="2022-02-07T22:02:35 IST" name="Default test" finished-at="2022-02-07T22:03:19 IST" duration-ms="43280">
+    <test started-at="2022-02-08T10:46:51 IST" name="Default test" finished-at="2022-02-08T10:47:22 IST" duration-ms="30820">
       <class name="testExecution.SearchTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testExecution.SearchTest@383bfa16]" started-at="2022-02-07T22:02:25 IST" name="setup" finished-at="2022-02-07T22:02:35 IST" duration-ms="10237" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testExecution.SearchTest@383bfa16]" started-at="2022-02-08T10:46:43 IST" name="setup" finished-at="2022-02-08T10:46:51 IST" duration-ms="7493" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="SearchApp()[pri:0, instance:testExecution.SearchTest@383bfa16]" started-at="2022-02-07T22:02:35 IST" name="SearchApp" finished-at="2022-02-07T22:03:19 IST" duration-ms="43173" status="PASS">
+        <test-method signature="SearchApp()[pri:0, instance:testExecution.SearchTest@383bfa16]" started-at="2022-02-08T10:46:51 IST" name="SearchApp" finished-at="2022-02-08T10:47:22 IST" duration-ms="30761" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SearchApp -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testExecution.SearchTest@383bfa16]" started-at="2022-02-07T22:03:19 IST" name="teardown" finished-at="2022-02-07T22:03:20 IST" duration-ms="1590" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testExecution.SearchTest@383bfa16]" started-at="2022-02-08T10:47:22 IST" name="teardown" finished-at="2022-02-08T10:47:23 IST" duration-ms="1397" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
