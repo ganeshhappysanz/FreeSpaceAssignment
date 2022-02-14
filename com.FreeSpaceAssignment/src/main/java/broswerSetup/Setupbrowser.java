@@ -5,11 +5,14 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -27,6 +30,10 @@ public class Setupbrowser {
         properties.load(fileInputStream);
         return properties;
     }
+	
+	public static void ElementWait() throws Exception{ 
+		new WebDriverWait(driver, 60).until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*[contains(text(),'Rating')]"),"Rating"));
+	}
 
 	
 			
@@ -44,8 +51,12 @@ public class Setupbrowser {
 		}
 		
 		public static void pageScrollDown() {
-			JavascriptExecutor jse = (JavascriptExecutor)driver;
-			jse.executeScript("window.scrollBy(0,2000)");
+			
+			  JavascriptExecutor jse = (JavascriptExecutor)driver;
+			  jse.executeScript("window.scrollBy(0,1800)");
+			  jse.executeScript("window.scrollBy(0,-550)");
+			 
+			
 		}
 		
 		

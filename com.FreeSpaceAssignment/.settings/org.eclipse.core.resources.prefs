@@ -2,3 +2,5 @@ eclipse.preferences.version=1
 encoding//src/main/java/broswerSetup/Setupbrowser.java=UTF-8
 encoding//src/main/java/pageElements/PageObjects.java=UTF-8
 encoding//src/main/java/testExecution/SearchTest.java=UTF-8
+encoding/pom.xml=UTF-8
+encoding/testNG.xml=UTF-8
