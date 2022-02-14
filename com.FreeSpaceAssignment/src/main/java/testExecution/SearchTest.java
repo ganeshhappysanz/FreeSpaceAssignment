@@ -21,9 +21,9 @@ import pageElements.PageObjects;
 public class SearchTest extends Setupbrowser {
 
 	
-	public static void enterData(WebElement element, int row, int cellNo, XSSFSheet sheet) {
+	public static void enterData(WebElement appElement, int row, int cellNo, XSSFSheet sheet) {
 		try {
-			sheet.getRow(row).createCell(cellNo).setCellValue(element.getText().toString());
+			sheet.getRow(row).createCell(cellNo).setCellValue(appElement.getText().toString());
 
 		} catch (NoSuchElementException e) {
 			sheet.getRow(row).createCell(cellNo).setCellValue("-");
