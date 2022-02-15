@@ -41,12 +41,20 @@ public class Setupbrowser {
 		public static void setup() throws IOException {
 			 loadpropertyFile();
 		     String Appurl=properties.getProperty("APPURL");
-			
+		     String Browsers=properties.getProperty("browser");
 			//WebDriverManager.firefoxdriver().setup();
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\Drivers\\geckodriver.exe");
-			driver = new FirefoxDriver(); 
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
-			driver.get(Appurl);
+		     
+			 
+			 
+		 	 if(Browsers.equalsIgnoreCase("chrome")) {
+			 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
+			 driver=new ChromeDriver();
+		 	 }else if(Browsers.equalsIgnoreCase("fireFox")) {
+		 		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\Drivers\\geckodriver.exe");
+				 driver=new FirefoxDriver();
+		 	 }
+		 	 driver.manage().window().maximize();
+		 	 driver.get(Appurl);
 			
 		}
 		
