@@ -20,7 +20,6 @@ import pageElements.PageObjects;
 
 public class SearchTest extends Setupbrowser {
 
-	
 	public static void enterData(WebElement appElement, int row, int cellNo, XSSFSheet sheet) {
 		try {
 			sheet.getRow(row).createCell(cellNo).setCellValue(appElement.getText().toString());
@@ -64,18 +63,17 @@ public class SearchTest extends Setupbrowser {
 				if (exceldata.equalsIgnoreCase("Swiggy")) {
 					enterData(PageObjects.swiggyPlaystore, 2, 1, sheet);
 					enterData(PageObjects.swiggyAppstore, 2, 2, sheet);
-					
-					
+
 				}
 				if (exceldata.equalsIgnoreCase("Netflix")) {
 					enterData(PageObjects.netflixPlaystore, 3, 1, sheet);
 					enterData(PageObjects.netflixAppstore, 3, 2, sheet);
-					
+
 				}
 				if (exceldata.equalsIgnoreCase("Zee5")) {
 					enterData(PageObjects.zee5Playstore, 4, 1, sheet);
 					enterData(PageObjects.zee5Appstore, 4, 2, sheet);
-					
+
 				}
 
 			}
@@ -89,16 +87,3 @@ public class SearchTest extends Setupbrowser {
 	}
 
 }
-
-/*
- * sheet.getRow(1).createCell(1).setCellValue(PageObjects.zomatoPlaystore.
- * getText());
- * sheet.getRow(2).createCell(1).setCellValue(PageObjects.swiggyPlaystore.
- * getText());
- * sheet.getRow(3).createCell(1).setCellValue(PageObjects.netflixPlaystore.
- * getText());
- * sheet.getRow(4).createCell(1).setCellValue(PageObjects.zee5Playstore.getText(
- * )); FileOutputStream fos = new
- * FileOutputStream((System.getProperty("user.dir")+"\\TestData\\TestData.xlsx")
- * ); workbook.write(fos);
- */
